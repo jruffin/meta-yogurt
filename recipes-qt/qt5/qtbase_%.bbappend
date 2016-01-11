@@ -30,10 +30,10 @@ do_configure_prepend_mx6() {
         sed -i 's!load(qt_config)!!' ${S}/mkspecs/linux-oe-g++/qmake.conf
 
         # copy the hook in the mkspecs directory OE is using
-        cp ${S}/mkspecs/devices/linux-imx6-g++/qeglfshooks_imx6.cpp ${S}/mkspecs/linux-oe-g++/
+        #cp ${S}/mkspecs/devices/linux-imx6-g++/qeglfshooks_imx6.cpp ${S}/mkspecs/linux-oe-g++/
 
         cat >> ${S}/mkspecs/linux-oe-g++/qmake.conf <<EOF
-EGLFS_PLATFORM_HOOKS_SOURCES = \$\$PWD/qeglfshooks_imx6.cpp
+#EGLFS_PLATFORM_HOOKS_SOURCES = \$\$PWD/qeglfshooks_imx6.cpp
 IMX6_CFLAGS             = -DLINUX=1 -DEGL_API_FB=1
 QMAKE_LIBS_EGL         += -lEGL
 QMAKE_LIBS_OPENGL_ES2  += -lGLESv2 -lEGL -lGAL
